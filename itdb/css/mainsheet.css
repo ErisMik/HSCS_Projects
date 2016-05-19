@@ -1,0 +1,31 @@
+/* Eric Mikulin ComputerScience Project */
+
+#searchDiv {
+	min-width: 300px;
+	border: 1px solid black;
+	border-bottom: 0px;
+}
+
+.searchBlock {
+	border-bottom: 1px solid black;
+	padding: 5px;
+	margin-bottom: 5px;
+}
+
+#searchResults {
+	margin-top: 10px;
+	min-width: 300px;
+	padding: 5px;
+	border: 1px solid black;
+}
+
+.resultDiv {
+	margin-top: 3px;
+	padding: 3px;
+	border: 1px dotted black;
+}
+
+textarea {
+	min-width: 300px;
+	width: 50%;
+}

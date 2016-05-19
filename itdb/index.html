@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>ITDb</title>
+        <meta name="Searc through IB tests" content="ITDb">
+        <meta name="Eric Mikulin" content="Website?">
+        <link rel="stylesheet" href="css/mainsheet.css">
+        <script type="text/javascript" src="https://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="src/main.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1> ITDb: The IB Test Database</h1>
+        </header>
+        <div>
+            <div id="searchDiv">
+                <!-- <form id="searchForm"> -->
+                    <div class="searchBlock">
+                        <p> Select the subject you want to search in </p>
+                        <select id="subjectSelect" name="subject">
+                            <option value="all">All Subjects</option>
+                            <option value="HistoryIB">History IB</option>
+                            <option value="EnglishIB">English IB</option>
+                            <option value="MathIB">Math IB</option>
+                            <option value="BioIB">Biology IB</option>
+                            <option value="ChemIB">Chemistry IB</option>
+                            <option value="PhysIB">Physics IB</option>
+                        </select>
+                    </div>
+                    <div class="searchBlock">
+                        <p> Select the parts of the papers to search </p>
+                        <div id="partsSelect">
+                            <input type="checkbox" name="searchType" value="paperId" >Paper ID <br>
+                            <input type="checkbox" name="searchType" value="questions" checked>Questions <br>
+                            <input type="checkbox" name="searchType" value="other" >Other <br>
+                        </div>
+                    </div>
+                    <div class="searchBlock">
+                        <p> Years to search in </p>
+                        <div id="yearSelect">
+                            <input type="checkbox" name="searchType" value="2015" checked>2015 <br>
+                            <input type="checkbox" name="searchType" value="2014" checked>2014 <br>
+                            <input type="checkbox" name="searchType" value="2013" checked>2013 <br>
+                            <input type="checkbox" name="searchType" value="2012" checked>2012 <br>
+                            <input type="checkbox" name="searchType" value="2011" checked>2011 <br>
+                            <input type="checkbox" name="searchType" value="2010" checked>2010 <br>
+                            <input type="checkbox" name="searchType" value="older" checked>Older than 2010 <br>
+                        </div>
+                    </div>
+                    <div class="searchBlock">
+                        <p> Text to search for: </p>
+                        <textarea id="inputSelect" name="searchText" rows="4" cols="100" placeholder="Search here!"></textarea>
+                        <br>
+                        <a href="help.html">Expression help</a>
+                    </div>
+                    <div class="searchBlock">
+                        <button onClick="do_search()">Search</button>
+                        <!-- <input type="submit"> -->
+                    </div>
+                <!-- </form> -->
+            </div>
+            <div id="searchResults">
+                <h2> Results </h2>
+                <!--
+                <div class="resultDiv">
+                    <p> Paper Name </p>
+                    <p> Question Number(s)</p>
+                    <a href=""> Link to Paper</a>
+                </div>
+                -->
+            </div>
+        </div>
+        <footer>
+            <p> Programmed by Eric for Computer Science 302</p>
+        </footer>
+    </body>
+</html>
