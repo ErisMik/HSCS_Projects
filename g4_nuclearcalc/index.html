@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<!-- Created By Eric Mikulin -->
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Nuke Model</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+  </head>
+
+  <body>
+    <script src="js/canvas.js"></script>
+
+    <header>
+      <h1> Nuclear Warhead Blast Model </h1>
+    </header>
+
+    <div class="wrapper">
+      <div class="input">
+        <h3>Warhead Size (megaTons)</h3>
+        <p class="default">Default: 10 megaTons</p>
+        <input type="text" id="size"></input>
+      </div>
+
+      <div class="input">
+        <h3>Warhead Type</h3>
+        <p class="default">Default: Nuclear Fission</p>
+        Fission <input type="radio" name="warhead" id="typeFission"></input>
+        Fusion <input type="radio" name="warhead" id="typeFusion"></input>
+        Neutron <input type="radio" name="warhead" id="typeNeutron"></input>
+      </div>
+
+      <div class="input">
+        <h3>Distance (km)</h3>
+        <p class="default">Default: 100km</p>
+        <input type="text" id="range"></input>
+      </div>
+
+      <div class="input">
+        <h3>Wind Speed(km)</h3>
+        <p class="default">Default: 10km/h</p>
+        <input type="text" id="wind"></input>
+      </div>
+
+      <div id="buttons">
+        <input class="button" type="button" value="Reset" onClick="window.location.href=window.location.href"/>
+        <input class="button" type="button" value="Compute" onclick="draw();"/>
+      </div>
+    </div>
+
+    <canvas id="nukeCanvas" width="1200" height="450"></canvas>
+    <canvas id="falloutCanvas" width="1200" height="450"></canvas>
+
+    <div class="wrapper" id="data">
+      <h3>Data</h3>
+      <div class="dWrapper">
+        <p class="dType">Range</p>
+        <p class="dData" id="dRange"></p>
+        <p class="dUnit">km</p>
+      </div>
+
+      <div class="dWrapper">
+        <p class="dType">Size</p>
+        <p class="dData" id="dSize"></p>
+        <p class="dUnit">megaTons</p>
+      </div>
+
+      <div class="dWrapper">
+        <p class="dType">Wind Speed</p>
+        <p class="dData" id="dWind"></p>
+        <p class="dUnit">km/h</p>
+      </div>
+
+      <div class="dWrapper">
+        <p class="dType">Peak Gamma Radiation</p>
+        <p class="dData" id="dPeakGammaRad"></p>
+        <p class="dUnit">grays</p>
+      </div>
+
+      <div class="dWrapper">
+        <p class="dType">Peak Neutron Radiation</p>
+        <p class="dData" id="dPeakNeuRad"></p>
+        <p class="dUnit">grays</p>
+      </div>
+
+      <div class="dWrapper">
+        <p class="dType">Peak Thermal Output</p>
+        <p class="dData" id="dPeakTemp"></p>
+        <p class="dUnit">J</p>
+      </div>
+
+      <div class="dWrapper">
+        <p class="dType">Peak Overpressure</p>
+        <p class="dData" id="dPeakPressure"></p>
+        <p class="dUnit">kPa</p>
+      </div>
+
+      <div class="dWrapper">
+        <p class="dType">Area Covered by Fallout</p>
+        <p class="dData" id="dFalloutArea"></p>
+        <p class="dUnit">km^2</p>
+      </div>
+
+      <div class="dWrapper">
+        <p class="dType">Minnimum Safe Distance</p>
+        <p class="dData" id="dSafeDistance"></p>
+        <p class="dUnit">km</p>
+      </div>
+    </div>
+
+    <div id="instructions">
+      <h3>Instructions</h3>
+      <pre>
+        1. Fill in the data in the fields, or leave them blank to use defaults
+        2. Press the "Compute" button to apply changes
+          1. You may do this at anytime, no reset required beforehand
+        3. Mouse over the large boxes to grpahically apply the changes
+          1. Doesn't apply to the Data section
+        4. Press the reset button to clear all text boxes and the canvas boxes
+      </pre>
+      <p><a href="help.html">What am I seeing here? / I still don't get it!</a></p>
+    </div>
+
+    <footer>
+      <p> Created by Eric Mikulin for the IB G4 Project </p>
+    </footer>
+
+  </body>
+
+</html>
